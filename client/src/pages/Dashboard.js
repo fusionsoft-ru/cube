@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
+import Menu from '../components/Menu'
+import Content from '../components/Content'
+import Settings from '../components/Settings'
 
 class Dashboard extends Component {
   render() {
     return (
-			<Header />
+			<div className="container">
+				<Header />
+				<Menu />
+				<Content />
+				<Settings />
+			</div>
     )
   }
 }
