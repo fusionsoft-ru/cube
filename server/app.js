@@ -1,28 +1,36 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
+const Koa = require('koa');
+const app = new Koa();
+const json = require('koa-json');
+const onerror = require('koa-onerror');
+const logger = require('koa-logger');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const index = require('./routes/index');
+const auth = require('./routes/auth');
+const cube = require('./routes/cube');
 
-var app = express();
+// error handler
+onerror(app);
 
-app.use(logger('dev'));
-app.use(express.json());
+// middlewares
+app.use(json());
+app.use(logger());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-app.use((req, res, next) => {
-  next(createError(404));
+// logger
+app.use(async (ctx, next) => {
+  const start = new Date();
+  await next();
+  const ms = new Date() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.status(err.status || 500);
-  res.send({error: 'somethin went wrong'});
+// routes
+app.use(index.routes(), index.allowedMethods())
+app.use(auth.routes(), auth.allowedMethods())
+app.use(cube.routes(), cube.allowedMethods())
+
+// error-handling
+app.on('error', (err, ctx) => {
+  console.error('server error', err, ctx)
 });
 
 module.exports = app;

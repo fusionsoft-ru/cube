@@ -8,7 +8,7 @@ class Settings extends Component {
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<a href="#"><i className="cube-header-icon help"></i></a>
+							<a href="/"><i className="cube-header-icon help"></i></a>
 							<button type="button" className="close" data-dismiss="modal">&times;</button>
 						</div>
 						<div className="modal-body">
@@ -25,8 +25,8 @@ class Settings extends Component {
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-1" type="text" value="Category"/>
@@ -50,16 +50,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this)"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this)"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="1">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-2" type="text" value="Cracks"/>
@@ -73,16 +73,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-3" type="text" value="Country"/>
@@ -106,16 +106,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="1">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-4" type="text" value="Customer"/>
@@ -129,16 +129,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-6" type="text" value="Some other dimension"/>
@@ -162,16 +162,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="1">
 											<td className="arrow-column">
-												<a href="javascript:;" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-7" type="text" value="Quarter"/>
@@ -185,16 +185,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="2">
 											<td className="arrow-column">
-												<a href="javascript:;" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-8" type="text" value="Month"/>
@@ -208,16 +208,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="3">
 											<td className="arrow-column">
-												<a href="javascript:;" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-9" type="text" value="Day"/>
@@ -231,16 +231,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-10" type="text" value="Week"/>
@@ -264,16 +264,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="1">
 											<td className="arrow-column">
-												<a href="javascript:;" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" onclick="changeDepth('left', this);"><i className="arrow-left"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<i className="arrow-right"></i><input id="name-11" type="text" value="Day"/>
@@ -287,16 +287,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-12" type="text" value="Tonnage"/>
@@ -320,16 +320,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-13" type="text" value="Quantity"/>
@@ -353,16 +353,16 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 										<tr data-level="0">
 											<td className="arrow-column">
-												<a href="javascript:;" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
-												<a href="javascript:;" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
+												<a href="/" data-active="disabled" onclick="changeDepth('left', this);"><i className="arrow-left disabled"></i></a>
+												<a href="/" onclick="changeDepth('right', this);"><i className="arrow-right"></i></a>
 											</td>
 											<td>
 												<input id="name-14" type="text" value="Column12"/>
@@ -386,21 +386,21 @@ class Settings extends Component {
 											</td>
 											<td>
 												<div className="arrow-up-down-block">
-													<a href="javascript:;" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
-													<a href="javascript:;" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
+													<a href="/" onclick="moveRow('up', this);"><i className="arrow-up"></i></a>
+													<a href="/" onclick="moveRow('down', this);"><i className="arrow-down"></i></a>
 												</div>
-												<a href="javascript:;" onclick="removeLine(this);"><i className="remove">&times;</i></a>
+												<a href="/" onclick="removeLine(this);"><i className="remove">&times;</i></a>
 											</td>
 										</tr>
 									</table>
 								</div>
-								<a href="javascript:;" onclick="addSettingsRow();" className="btn btn-plus btn-plus-text">Add Column</a>
+								<a href="/" onclick="addSettingsRow();" className="btn btn-plus btn-plus-text">Add Column</a>
 							</form>
 							<div className="upload-file-block">
 								<form action="/">
 									<input type="file" id="upload-file-input"/>
 									<input type="text" value="Upload file.." className="upload-file-text-box"/>
-									<a href="javascript:;" onclick="settingsUploadFile(this)"><i className="cloud-icon"></i></a>
+									<a href="/" onclick="settingsUploadFile(this)"><i className="cloud-icon"></i></a>
 									<div className="upload-file-block-footer">
 										<input type="checkbox" id="getNamesFromFirstRow" name="getNamesFromFirstRow" checked="checked"/>
 										<label for="getNamesFromFirstRow">Get names from the first row</label>
@@ -413,7 +413,7 @@ class Settings extends Component {
 						</div>
 						<div className="modal-footer">
 							<input type="submit" className="btn btn-primary" data-dismiss="modal" value="Save"/>
-							<a href="javascript:;" data-dismiss="modal" className="btn">Cancel</a>
+							<a href="/" data-dismiss="modal" className="btn">Cancel</a>
 						</div>
 					</div>
 

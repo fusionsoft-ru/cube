@@ -1,11 +1,7 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 
 class Menu extends Component {
-	constructor(props) {
-    super(props);
-  }
-
 	render() {
 		return ( 
 			<div className="cube-left-block">
@@ -15,12 +11,12 @@ class Menu extends Component {
 						<th>Client</th>
 					</tr>
 					<tr>
-						<td className="toggling">All Types<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
-						<td className="toggling">All Clients<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
+						<td className="toggling">All Types<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
+						<td className="toggling">All Clients<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
 					</tr>
 					<tr>
-						<td className="collapsed toggling">Cracks<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-down"></i></a></td>
-						<td className="collapsed toggling">All Clients<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-down"></i></a></td>
+						<td className="collapsed toggling">Cracks<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-down"></i></a></td>
+						<td className="collapsed toggling">All Clients<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-down"></i></a></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -31,8 +27,8 @@ class Menu extends Component {
 						<td>Volvo Construction Equipment Ab </td>
 					</tr>
 					<tr>
-						<td className="toggling">Blister<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
-						<td className="toggling">All Clients<a href="javascript:;" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
+						<td className="toggling">Blister<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
+						<td className="toggling">All Clients<a href="/" onclick="toggleCell(this);"><i className="table-arrow arrow-right"></i></a></td>
 					</tr>
 				</table>
 			</div>
@@ -40,4 +36,4 @@ class Menu extends Component {
 	}
 }
  
-export default Menu
+export default Menu;
