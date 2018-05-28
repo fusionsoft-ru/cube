@@ -1,0 +1,11 @@
+{
+	"app": {
+		"port": 8000
+	},
+	"db": {
+		"host": "localhost",
+		"port": 8123,
+		"name": "cube" 
+	}
+
+}

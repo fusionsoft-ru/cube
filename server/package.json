@@ -13,6 +13,7 @@
     "clickhouse": "^1.1.4",
     "clickhouse-nodejs": "^1.0.4",
     "debug": "^2.6.3",
+    "knex": "^0.14.6",
     "koa": "^2.2.0",
     "koa-convert": "^1.2.0",
     "koa-json": "^2.0.2",

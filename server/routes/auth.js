@@ -1,28 +1,24 @@
-const router = require('koa-router')()
-const ClickHouse = require('@apla/clickhouse')
-const db = new ClickHouse ({host: 'localhost', port: 8123});
+const router = require('koa-router')();
 
+router.prefix('/');
 
-router.prefix('/')
 
 router.get('/createdb', async (ctx) => {
-	var query = '';
-	query = 'CREATE DATABASE IF NOT EXISTS cube';
-	await db.query(query, (err) => {
-		if(err)
-			console.log('Could not create database cube', err);
-		else
-			console.log('Database cube was created successfully');
-	});
-	query = 'CREATE TABLE IF NOT EXISTS cube.users	(username String, fullname String, email String, password String) Engine=Log';
-	await db.query(query, (err) => {
-		if(err)
-			console.log('Could not create table cube.users', err);
-		else
-			console.log('Table cube.users was created successfully');
-	});
+	try {
+		await ctx.db.query('CREATE DATABASE IF NOT EXISTS cube');
+		await ctx.db.query('CREATE TABLE IF NOT EXISTS cube.users	(username String, fullname String, email String, password String) Engine=Log');
+		await ctx.db.query("INSERT INTO cube.users values ('admin', 'admin', 'admin@ya.ru', 'a')");
+		await ctx.db.query("INSERT INTO cube.users values ('user', 'user', 'user@ya.ru', 'u')");
+	}
+	catch(error) {
+		console.log(error)
+	}
 	ctx.body = {message: 'database created'};
+});
 
-})
 
-module.exports = router
+router.get('/dropdb', async (ctx) => {
+	await ctx.db.query('DROP DATABASE IF EXISTS cube');
+});
+
+module.exports = router;
