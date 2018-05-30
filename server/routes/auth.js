@@ -15,11 +15,7 @@ router.post('/register', async (ctx) => {
   if(!is_exist) {
 		if(username && password && email) {
 			const encoded = bcrypt.hashSync(password, 8)
-			const token = jwt.sign(
-				{ username: username},
-				config.app.secret,
-				{ expiresIn: 86400 }
-			)
+			const token = jwt.sign({ username: username}, config.app.secret, { expiresIn: 86400 })
 			console.log(typeof(ctx.clex))
 			await ctx.clex.query(`INSERT INTO cube.users VALUES ('${username}', '${encoded}', '${email}')`)
 			ctx.body = { auth: true, token: token }
