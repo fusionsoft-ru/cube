@@ -1,6 +1,7 @@
 {
 	"app": {
-		"port": 8000
+		"port": 8000,
+    "secret": "nvm"
 	},
 	"db": {
 		"host": "localhost",
