@@ -62,9 +62,13 @@ router.post('/login', async (ctx) => {
 			ctx.body = { auth: true, token: token }
     }
 		else {
-			ctx.response.status = 500
-      ctx.body = { auth: false, message: 'Failed to authentificate credentials' }
+			ctx.response.status = 401
+      ctx.body = { auth: false, message: 'Wrong credentials' }
 		}
+	}
+	else {
+		ctx.response.status = 500
+		ctx.body = { auth: false, message: 'Failed to authentificate credentials' }
 	}
 })				
 
