@@ -1,6 +1,14 @@
 const ClickHouse = require('@apla/clickhouse')
 
 
+String.prototype.format = function () {
+  var i = 0, args = arguments
+  return this.replace(/{}/g, function () {
+    return typeof args[i] != 'undefined' ? args[i++] : ''
+  })
+}
+
+
 class Clex {
 	constructor(host, port, debug){
 		this.host = host

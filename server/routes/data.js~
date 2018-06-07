@@ -1,0 +1,41 @@
+const router = require('koa-router')()
+
+
+router.get('/data/:cube', async (ctx) => {
+  const cube = ctx.params.cube
+  const sql = `SELECT * FROM cube.${cube}`
+  console.log(sql)
+  cube_data = await ctx.clex.query(sql)
+  ctx.body = cube_data
+  //ctx.body = {hello: "world" }
+})
+
+
+router.get('/cube/:cube', async (ctx) => {
+  console.log(ctx.loki)
+	const cubeScheme = await ctx.loki.getCollection('cubeScheme')
+  ctx.body = cubeScheme
+})
+
+
+router.post('/data/:cube', async (ctx) => {
+  ctx.body = { cube: 'post' }
+})
+
+
+router.delete('/data/:cube', async (ctx) => {
+  ctx.body = { cube: 'post' }
+})
+
+
+router.post('/cube/:cube/upload', async (ctx) => {
+  ctx.body = { cube: 'post' }
+})
+
+
+router.delete('/cube/:cube', async (ctx) => {
+  ctx.body = { cube: 'post' }
+})
+
+
+module.exports = router

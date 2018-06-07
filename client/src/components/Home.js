@@ -9,9 +9,9 @@ class Home extends Component {
 	}
 
 	async componentDidMount() {
-		return fetch('/cube')
-    .then((res) => res.text())
-    .then((data) => alert(data))
+		return fetch('/data/claims')
+    .then((res) => res.json())
+    .then((data) => alert(data.length))
     .catch((error) => console.error("error: " + error))
 	}
 	

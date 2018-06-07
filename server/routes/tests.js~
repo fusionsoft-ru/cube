@@ -1,11 +1,10 @@
 const router = require('koa-router')()
 const csv = require('csvtojson')()
 const bcrypt = require('bcrypt')
+var fs = require("fs")
 
-router.prefix('/db')
 
-
-router.get('/create', async (ctx) => {
+router.get('/database/create', async (ctx) => {
 	try {
 		await ctx.clex.query('CREATE DATABASE IF NOT EXISTS cube')
 		await ctx.clex.query('CREATE TABLE IF NOT EXISTS cube.users	(username String, password String, email String) Engine=Log');
@@ -14,25 +13,19 @@ router.get('/create', async (ctx) => {
 	catch(error) {
 		console.log(error)
 	} finally {
-	  ctx.body = {message: 'database created'}
+	  ctx.body = { message: 'database created successfully' }
 	}
 })
 
-String.prototype.format = function () {
-  var i = 0, args = arguments;
-  return this.replace(/{}/g, function () {
-    return typeof args[i] != 'undefined' ? args[i++] : '';  
-  });
-};
 
-router.get('/fill', async (ctx) => {
+router.get('/database/load', async (ctx) => {
 	try {
 		var sql = null
 		sql = "INSERT INTO cube.users values ('admin', '{}', 'admin@ya.ru')".format(bcrypt.hashSync('a', 8))
 		await ctx.clex.query(sql);
 		sql = "INSERT INTO cube.users values ('user', '{}', 'user@ya.ru')".format(bcrypt.hashSync('u', 8))
 		await ctx.clex.query(sql);
-		const data = await csv.fromFile('./tests/claims.csv')
+		const data = await csv.fromFile('./data/claims.csv')
 		console.log(data)
 		for(var i=0; i < data.length; i++) {
 			var id = data[i].Id
@@ -53,21 +46,37 @@ router.get('/fill', async (ctx) => {
 			await ctx.clex.query(sql)
 		}	
 	} catch (err) {
-	  ctx.body = {message: 'Errors in data loading'}
+	  ctx.body = { message: 'Errors in database loading' }
 	} finally {
-	  ctx.body = {message: 'Data loaded succesfully'}
+	  ctx.body = { message: 'Database loaded successfully' }
 	}
 })
 
 
-router.get('/destroy', async (ctx) => {
+router.get('/database/destroy', async (ctx) => {
   try {
 	  await ctx.clex.query('DROP DATABASE IF EXISTS cube')
 	} catch (err) {
-		ctx.body = {error: err}
+		ctx.body = { error: err }
 	} finally {
-		ctx.body = {message: 'Database cube was destroyed'}
+		ctx.body = { message: 'Database destroyed successfully' }
 	}
+})
+
+
+router.get('/datastore/create', async (ctx) => {
+  ctx.loki.addCollection('structure')
+  ctx.body = { message: 'Datastore created successfully' }
+})
+
+
+router.get('/datastore/load', async (ctx) => {
+  const data = JSON.parse(fs.readFileSync('./models/structure.json'))
+  const coll = await ctx.loki.getCollection('structure')
+  console.log(coll.data())
+  console.log('HHHHHH')
+  coll.insert(data)
+  ctx.body = { message: 'Datastore loaded succesfully' }
 })
 
 module.exports = router

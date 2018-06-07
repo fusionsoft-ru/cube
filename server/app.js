@@ -1,18 +1,21 @@
 const Koa = require('koa')
 const app = new Koa()
 const json = require('koa-json')
-const bodyparser = require('koa-bodyparser');
+const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const onerror = require('koa-onerror')
+const Loki = require('lokijs')
+const Clex = require('./models/clex')
 const config = require('./config')
-const Clex = require('./clex')
 
 const index = require('./routes/index')
 const auth = require('./routes/auth')
 const users = require('./routes/users')
-const cube = require('./routes/cube')
-const db = require('./tests/db')
+const data = require('./routes/data')
+const tests = require('./routes/tests')
 
+
+app.context.loki = new Loki('./datastore.json', {autosave: true, autosaveInterval: 5000, autoload: true})
 app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
@@ -28,8 +31,8 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(auth.routes(), auth.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
-app.use(cube.routes(), cube.allowedMethods())
-app.use(db.routes(), db.allowedMethods())
+app.use(data.routes(), data.allowedMethods())
+app.use(tests.routes(), tests.allowedMethods())
 
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
