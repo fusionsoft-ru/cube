@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 
-class Header extends Component {
+class Top extends React.Component {
 	render() {
-		return ( 
+		return (
 			<div className="cube-header">
 				<div className="left-block">
 					<a onclick="addReport();" className="btn btn-plus"></a>
@@ -13,11 +13,11 @@ class Header extends Component {
 						<option value="3">Saved Report #3</option>
 						<option value="4">Saved Report #4</option>
 					</select>
-					<a class="btn">Save</a>
+					<a className="btn">Save</a>
 				</div>
 				<div className="right-block">
 					<span>Measure</span>
-					<select id="choose-measure" class="chosen">
+					<select id="choose-measure" className="chosen">
 						<option value="ton" selected>Tonnage</option>
 						<option value="kilos">Kilogramms</option>
 					</select>
@@ -29,5 +29,5 @@ class Header extends Component {
 		)
 	}
 }
- 
-export default Header
+
+export default Top

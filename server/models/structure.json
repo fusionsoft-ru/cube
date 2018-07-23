@@ -1,0 +1,90 @@
+{
+  "code": "claims",
+  "language": "en",
+  "name": "Claims",
+  "dimensions": [
+    {
+      "defect": {
+        "dimension-name": "defect",
+        "field": "defect",
+        "type": "list",
+        "type-position": "row",
+        "number-position": 1,
+        "values": [
+          "Cracks",
+          "Blister",
+          "Indvalsninger",
+          "Grinding"
+        ]
+      }
+    },
+    {
+      "time": {
+        "dimension-name": "time",
+        "sub_dimensions": [
+          "quarter",
+          "month",
+          "week"
+        ],
+        "type-position": "column",
+        "number-position": 1
+      }
+    },
+    {
+      "quarter": {
+        "dimension-name": "quarter",
+        "field": "quarter",
+        "type": "period",
+        "format": "QQ:YYYY",
+        "values": [
+          "01:2017",
+          "02:2017",
+          "03:2017"
+        ]
+      }
+    },
+    {
+      "month": {
+        "dimension-name": "month",
+        "field": "month",
+        "type": "period",
+        "format": "M",
+        "values": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "week": {
+        "dimension-name": "week",
+        "field": "week",
+        "type": "period",
+        "format": "W",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    }
+  ],
+  "measures": [
+    {
+      "mass": {
+        "measure-name": "mass",
+        "type": "number",
+        "field": "tonnage"
+      }
+    },
+    {
+      "quantity": {
+        "measure-name": "quantity",
+        "type": "number",
+        "field": "quantity"
+      }
+    }
+  ]
+}

@@ -1,44 +1,36 @@
-const router = require('koa-router')()
+const router = require("koa-router")();
 
-
-router.get('/data/:cube', async (ctx) => {
-  const data = ctx.loki.getCollection('cube-data')
-  ctx.body = data
-	/*
+router.get("/data/:cube", async ctx => {
+  const data = ctx.loki.getCollection("cube-data");
+  ctx.body = data;
+  /*
   const cube = ctx.params.cube
   const sql = `SELECT * FROM cube.${cube}`
   console.log(sql)
   cube_data = await ctx.clex.query(sql)
   ctx.body = cube_data
   */
-})
+});
 
+router.get("/cube/:cube", ctx => {
+  const structure = ctx.loki.getCollection("cube-structure");
+  ctx.body = structure;
+});
 
-router.get('/cube/:cube', (ctx) => {
-	const structure = ctx.loki.getCollection('cube-structure')
-  console.log(structure.data[0].code)
-  ctx.body = structure
-})
+router.post("/data/:cube", async ctx => {
+  ctx.body = { data: "hi" };
+});
 
+router.delete("/data/:cube", async ctx => {
+  ctx.body = { cube: "post" };
+});
 
-router.post('/data/:cube', async (ctx) => {
-  ctx.body = {data: 'hi'}
-})
+router.post("/cube/:cube/upload", async ctx => {
+  ctx.body = { cube: "post" };
+});
 
+router.delete("/cube/:cube", async ctx => {
+  ctx.body = { cube: "post" };
+});
 
-router.delete('/data/:cube', async (ctx) => {
-  ctx.body = { cube: 'post' }
-})
-
-
-router.post('/cube/:cube/upload', async (ctx) => {
-  ctx.body = { cube: 'post' }
-})
-
-
-router.delete('/cube/:cube', async (ctx) => {
-  ctx.body = { cube: 'post' }
-})
-
-
-module.exports = router
+module.exports = router;
