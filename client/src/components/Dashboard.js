@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import Top from '../components/Top'
-import Left from '../components/Left'
-import Middle from '../components/Middle'
+import PivotTable from '../components/PivotTable'
+
 
 class Dashboard extends Component {
   render() {
     return (
 			<div className="container">
-				{/* <Top /> */}
-				<Left />
-				<Middle />
+				<PivotTable />
 			</div>
     )
   }
