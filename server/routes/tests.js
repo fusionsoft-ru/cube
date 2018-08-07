@@ -32,7 +32,7 @@ router.get("/database/load", async ctx => {
       bcrypt.hashSync("u", 8)
     );
     await ctx.clex.query(sql);
-    const data = await csv.fromFile("./data/claims.csv");
+    const data = await csv.fromFile("./models/claims.csv");
     console.log(data);
     for (var i = 0; i < data.length; i++) {
       var id = data[i].Id;
