@@ -32,7 +32,7 @@ router.get("/database/load", async ctx => {
       bcrypt.hashSync("u", 8)
     );
     await ctx.clex.query(sql);
-    const data = await csv.fromFile("./models/claims.csv");
+    const data = await csv.fromFile("../models/claims.csv");
     console.log(data);
     for (var i = 0; i < data.length; i++) {
       var id = data[i].Id;
@@ -67,6 +67,7 @@ router.get("/database/load", async ctx => {
       await ctx.clex.query(sql);
     }
   } catch (err) {
+  	console.log(err);
     ctx.body = { message: "Errors in database loading" };
   } finally {
     ctx.body = { message: "Database loaded successfully" };
