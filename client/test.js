@@ -1,5 +1,5 @@
 var state = {
-  "nodes": [
+  "dimensions": [
     {
       "isOpen": true,
       "name": "defect",

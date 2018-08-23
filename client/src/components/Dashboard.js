@@ -6,7 +6,10 @@ class Dashboard extends Component {
   render() {
     return (
 			<div className="container">
-				<PivotTable />
+				<PivotTable
+          dimensions={this.props.dimensions}
+          facts={this.props.facts}
+          />
 			</div>
     )
   }
