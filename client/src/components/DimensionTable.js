@@ -1,86 +1,117 @@
 import React, { Component } from 'react'
-import '../actions'
+import PropTypes from 'prop-types'
+import Arrow from './Arrow'
+import { load } from '../actions'
+import * as tree from '../utilities/tree'
 
 
-class DimensionsTable extends Component {
-  constructor(props) {
-    super(props)
-    this.state = props
+export default class DimensionTable extends Component {
+  onLoad() {
+    console.log('onLoad')
+    this.context.store.dispatch(load())
   }
-  arrow(dimension) {
-    if(dimension.visible) {
-      if(dimension.children){
-        return <i className="table-arrow arrow-right" />
+
+  header() {
+    const state = this.context.store.getState()
+    var hcols = []
+    tree.find(state.dimensions).forEach(dimension => {
+      hcols.push(
+        <th hidden={dimension.hidden}>
+          {dimension.title}
+            <Arrow
+            id={dimension.id}
+            toggled={dimension.toggled}
+             />
+        </th>
+      )
+    })
+    const thead = <tr> {hcols} </tr>
+    return thead
+  }
+
+  render() {
+    const state = this.context.store.getState()
+    var arrays = []
+    tree.find(state.dimensions).forEach(item => {
+      if(!item.hidden) {
+        arrays.push(item.values)
       }
-    } else {
-      if(dimension.children){
-        return <i
-          className="table-arrow arrow-down"
-          />
+    })
+
+    var walks = []
+    tree.traverse(state.dimensions, walks)
+    console.log(walks);
+    var data = walks[arrays.length-1]
+    // console.log(data);
+
+    var rows = []
+    for(var i=0; i<data.length; i++) {
+      var cols = []
+      for(var j=0; j<data[i].length; j++) {
+        cols.push(<td> {data[i][j]} </td>)
       }
+      rows.push(<tr> {cols} </tr>)
     }
-  }
 
-  toggle(dimension) {
-    console.log('Arrow pressed')
-  }
+    // var lengths = arrays.map(array => array.length)
+    // console.log('len ' + lengths);
+    // for(var i = 0; i < arrays.length; i++) {
+    //   arrays.forEach(array => {
+    //     array.forEach(elem => {
+    //
+    //     })
+    //   })
+    // }
 
-  header = []
-  body = []
-  level = 0
-  traverse(dimensions) {
-  	dimensions.forEach(dimension => {
-      if(dimension.visible) {
-        this.header.push(
-          <th>
-            {dimension.label}
-            <a onClick={this.toggle}>{this.arrow(dimension)}</a>
-          </th>)
-        // console.log('  '.repeat(level) + node.label)
-        console.log(dimension.visible)
-    		if(typeof dimension.children !== 'undefined') {
-          this.level++
-    			this.traverse(dimension.children)
-    		}
-      }
-  	})
-    this.level--
-  }
-
-	render() {
-    // this.traverse(this.state.dimensions)
-		/*
-    for(var i = 0; i < 3; i++) {
-      for(var j = 0; j < 3; j++) {
-        cols = []
-        for(var k = 0; k < 2; k++) {
-          if(j != 0) {
-            cols.push(
-              <td className="collapsed toggling">
-                {this.state.dimensions[k].values[j]}
-              </td>
-            )
-          } else {
-            cols.push(
-              <td className="collapsed toggling">
-                {'' + '-' + j}
-              </td>
-            )
-          }
+    //
+    // const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
+    // const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
+    // const data = cartesian(...arrays)
+    // console.log('mydata' + data)
+    // console.log('data: ', typeof data);
+    // var tbody = []
+    // data.forEeach(row => {
+    //   var trow = []
+    //   row.forEach(col => {
+    //     trow.puch(<td> {col} </td>)
+    //   })
+    //   tbody.push(<tr> {trow} </tr>)
+    // })
+    // for(var i = 0; i < arrays.length; i++) {
+    //   var trow = []
+    //   for(var j = 0; j < array[i].length; j++) {
+    //     for(var k = 0; k < ; k++) {
+    //       trow.push()
+    //     }
+    //   }
+    // }
+    // arrays.forEach(array => {
+    //   var trow = []
+    //   array.forEach(item => {
+    //     trow.push(item)
+    //   })
+    //   trows.push(trow)
+    // })
+    // console.log(trows)
+    // thead = 'this.header()'
+    return (
+      <div className="container">
+        <div className="cube-left-block">
+          {
+          // <button onClick={this.onLoad.bind(this)}>
+          //   Load
+          // </button>
         }
-        rows.push( <tr> {cols} </tr> )
-      }
-    }
-  */
-    // table(this.state.nodes)
-		return (
-			<div className="cube-left-block">
-				<table className="options-table">
-          <tr>{this.header}</tr>
-				</table>
-			</div>
-  	)
+    			<table className="options-table">
+            <thead> {this.header()} </thead>
+            <tbody> {rows} </tbody>
+    			</table>
+    		</div>
+      </div>
+    )
   }
 }
 
-export default DimensionsTable
+DimensionTable.contextTypes = {
+  store: PropTypes.object
+}

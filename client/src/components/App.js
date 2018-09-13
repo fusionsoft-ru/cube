@@ -1,19 +1,11 @@
-import React from 'react'
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import Dashboard from '../components/Dashboard'
-import NotFound from '../components/NotFound'
+import React, { Component } from 'react';
+import DimensionTable from './DimensionTable'
 
-class App extends React.Component {
-  render () {
+
+export default class App extends Component {
+  render() {
     return (
-      <BrowserRouter>
-    		<Switch>
-    			<Route exact path='/' component={Dashboard} />
-    			<Route path='*' component={NotFound} />
-    		</Switch>
-    	</BrowserRouter>
+      <DimensionTable/>
     )
   }
 }
-
-export default App
