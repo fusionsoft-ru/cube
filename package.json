@@ -23,6 +23,7 @@
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
     "koa-static": "^5.0.0",
+    "koa-static-folder": "^0.1.6",
     "lokijs": "^1.5.5"
   },
   "devDependencies": {
