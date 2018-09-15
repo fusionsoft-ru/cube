@@ -8,6 +8,7 @@ const onerror = require('koa-onerror')
 const Loki = require('lokijs')
 const Clex = require('./models/clex')
 const config = require('./config')
+const path = require('path')
 
 const index = require('./routes/index')
 const auth = require('./routes/auth')
@@ -20,7 +21,7 @@ app.context.loki = new Loki('./datastore.json', {autosave: true, autosaveInterva
 app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
-app.use(static(__dirname + '/build'))
+app.use(static(path.join(__dirname, 'client/build')))
 // app.use(static(__dirname + '/static'))
 app.use(logger())
 
