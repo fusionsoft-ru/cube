@@ -20,7 +20,7 @@ app.context.loki = new Loki('./datastore.json', {autosave: true, autosaveInterva
 app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
-app.use(static(__dirname + '/build'))
+app.use(static(__dirname + '/build',{defer:true}))
 app.use(logger())
 
 app.use(async (ctx, next) => {
