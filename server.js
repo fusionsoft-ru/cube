@@ -22,7 +22,6 @@ app.use(json())
 app.use(bodyparser())
 app.use(static(__dirname + '/build'))
 app.use(static(__dirname + '/static'))
-app.use(mount('/static', static('/build/static')))
 app.use(logger())
 
 app.use(async (ctx, next) => {
