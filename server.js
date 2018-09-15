@@ -23,7 +23,7 @@ app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
 app.use(static(path.join(__dirname, '/client/build')), {defer:true})
-// app.use(mount('/', static(path.join(__dirname, '/client/build'))))
+app.use(mount('/static', static(path.join(__dirname, '/client/build/static'))))
 //app.use(static(__dirname + '/client/build'))
 app.use(logger())
 
