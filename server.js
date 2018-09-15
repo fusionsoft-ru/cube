@@ -3,6 +3,7 @@ const app = new Koa()
 const json = require('koa-json')
 const bodyparser = require('koa-bodyparser')
 const static = require('koa-static')
+const mount = require('koa-mount')
 const logger = require('koa-logger')
 const onerror = require('koa-onerror')
 const Loki = require('lokijs')
@@ -20,7 +21,8 @@ app.context.loki = new Loki('./datastore.json', {autosave: true, autosaveInterva
 app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
-app.use(static(__dirname + '/build',{defer:true}))
+app.use(static(__dirname + '/build', {defer:true}))
+app.use(mount('/static', static('/build/static')))
 app.use(logger())
 
 app.use(async (ctx, next) => {
