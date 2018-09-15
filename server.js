@@ -26,6 +26,9 @@ app.use(bodyparser())
 // app.use(mount('/static', static(path.join(__dirname, '/client/build/static'))))
 app.use(serve(path.join(__dirname, 'build')))
 app.use(mount('/static', serve(path.join(__dirname, 'build/static'))))
+app.use(mount('/static/css', serve(path.join(__dirname, 'build/static/css'))))
+app.use(mount('/static/js', serve(path.join(__dirname, 'build/static/js'))))
+app.use(mount('/static/media', serve(path.join(__dirname, 'build/static/media'))))
 app.use(logger())
 
 app.use(async (ctx, next) => {
