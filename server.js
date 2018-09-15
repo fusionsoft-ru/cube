@@ -24,7 +24,7 @@ app.use(json())
 app.use(bodyparser())
 // app.use(serve(path.join(__dirname,'./client/build')))
 // app.use(mount('/static', static(path.join(__dirname, '/client/build/static'))))
-app.use(serve(path.join(__dirname, 'client/build'), { hidden: true }))
+app.use(serve(path.join(__dirname, 'build'), { hidden: true }))
 app.use(logger())
 
 app.use(async (ctx, next) => {
