@@ -1,0 +1,36 @@
+{
+  "name": "fusionsoftru-olap-cube",
+  "version": "0.1.0",
+  "description": "OLAP ClickHouse Database Interface based on React.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/fusionsoft-ru/cube"
+  },
+  "keywords": [
+    "olap",
+    "data-cube",
+    "reactive gui",
+    "hierarchical",
+    "database"
+  ],
+  "author": "Dmitry Nvm <dmitrynvm@gmail.com>",
+  "license": "MIT",
+  "homepage": "/",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.4",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "start": "PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
