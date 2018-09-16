@@ -1,25 +1,4 @@
 {
-  "main.css": "static/css/main.49231207.css",
-  "main.css.map": "static/css/main.49231207.css.map",
-  "main.js": "static/js/main.c549b25f.js",
-  "main.js.map": "static/js/main.c549b25f.js.map",
-  "static/media/arrow-down.svg": "static/media/arrow-down.d6584377.svg",
-  "static/media/arrow-left.svg": "static/media/arrow-left.bb56707f.svg",
-  "static/media/arrow-right.svg": "static/media/arrow-right.d45b608a.svg",
-  "static/media/arrow-up.svg": "static/media/arrow-up.5ddaef3b.svg",
-  "static/media/btn-plus-icon.svg": "static/media/btn-plus-icon.b160c2b3.svg",
-  "static/media/checkbox-checked.svg": "static/media/checkbox-checked.85a8d402.svg",
-  "static/media/close-modal-icon.svg": "static/media/close-modal-icon.2ac33c5f.svg",
-  "static/media/cloud-icon.svg": "static/media/cloud-icon.5880c636.svg",
-  "static/media/dropdown-arrow-icon.svg": "static/media/dropdown-arrow-icon.c6129516.svg",
-  "static/media/glyphicons-halflings-regular.eot": "static/media/glyphicons-halflings-regular.f4769f9b.eot",
-  "static/media/glyphicons-halflings-regular.svg": "static/media/glyphicons-halflings-regular.89889688.svg",
-  "static/media/glyphicons-halflings-regular.ttf": "static/media/glyphicons-halflings-regular.e18bbf61.ttf",
-  "static/media/glyphicons-halflings-regular.woff": "static/media/glyphicons-halflings-regular.fa277232.woff",
-  "static/media/glyphicons-halflings-regular.woff2": "static/media/glyphicons-halflings-regular.448c34a5.woff2",
-  "static/media/help-icon.svg": "static/media/help-icon.8d2a40b5.svg",
-  "static/media/print-icon.svg": "static/media/print-icon.34b9263a.svg",
-  "static/media/remove-line-icon.svg": "static/media/remove-line-icon.c68aa397.svg",
-  "static/media/settings-icon.svg": "static/media/settings-icon.512de80a.svg",
-  "static/media/warning-icon.svg": "static/media/warning-icon.bcb032aa.svg"
+  "main.js": "static/js/main.c2a9b41c.js",
+  "main.js.map": "static/js/main.c2a9b41c.js.map"
 }

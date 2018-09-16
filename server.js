@@ -22,11 +22,8 @@ app.context.loki = new Loki('./datastore.json', {autosave: true, autosaveInterva
 app.context.clex = new Clex(config.db.host, config.db.port, false)
 app.use(json())
 app.use(bodyparser())
-// console.log(path.join(__dirname, 'client','build'))
 app.use(serve(path.join(__dirname, 'build')))
-// app.use(serve(path.join(__dirname, 'public/css')))
-// app.use(serve(path.join(__dirname, 'public/js')))
-// app.use(serve(path.join(__dirname, 'public/img')))
+app.use(serve(path.join(__dirname, 'static')))
 app.use(logger())
 
 app.use(async (ctx, next) => {
