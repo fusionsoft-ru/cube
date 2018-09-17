@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
+    "start": "yarn build; node bin/www",
+    "build": "cd client; yarn build; cd ..",
+    "deps": "cd client; yarn install; cd ..; yarn install",
+    "dev": "yarn deps; yarn build; nodemon bin/www",
+    "prd": "node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -23,7 +25,6 @@
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
     "koa-static": "^5.0.0",
-    "koa-static-folder": "^0.1.6",
     "lokijs": "^1.5.5"
   },
   "devDependencies": {

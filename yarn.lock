@@ -20,13 +20,6 @@ accepts@^1.3.5:
     mime-types "~2.1.18"
     negotiator "0.6.1"
 
-accepts@~1.0.0:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.0.7.tgz#5b501fb4f0704309964ccdb048172541208dab1a"
-  dependencies:
-    mime-types "~1.0.0"
-    negotiator "0.4.7"
-
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
@@ -294,10 +287,6 @@ co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
 
-co@~3.0.2:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/co/-/co-3.0.6.tgz#1445f226c5eb956138e68c9ac30167ea7d2e6bda"
-
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -350,12 +339,6 @@ content-type@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
-cookies@~0.4.0:
-  version "0.4.1"
-  resolved "http://registry.npmjs.org/cookies/-/cookies-0.4.1.tgz#7d43bd00583c985acc032258b97988b7d03b629e"
-  dependencies:
-    keygrip "~1.0.0"
-
 cookies@~0.7.1:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.7.2.tgz#52736976126658af7713d7f858f7d21f99dab486"
@@ -400,12 +383,6 @@ csvtojson@^2.0.3:
     bluebird "^3.5.1"
     lodash "^4.17.3"
     strip-bom "^2.0.0"
-
-debug@*:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.0.1.tgz#f9bb36d439b8d1f0dd52d8fb6b46e4ebb8c1cd5b"
-  dependencies:
-    ms "^2.1.1"
 
 debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.1, debug@^2.6.3:
   version "2.6.9"
@@ -460,10 +437,6 @@ define-property@^2.0.2:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
 
-delegates@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/delegates/-/delegates-0.0.3.tgz#4f25cbf8e1c061967f834e003f3bd18ded4baeea"
-
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -479,10 +452,6 @@ destroy@^1.0.4:
 detect-libc@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
-
-dethroy@~1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/dethroy/-/dethroy-1.0.2.tgz#c82003317693dcbcda3f752b0182e3bf16dd4421"
 
 dot-prop@^4.1.0:
   version "4.2.0"
@@ -504,19 +473,15 @@ ecdsa-sig-formatter@1.0.10:
   dependencies:
     safe-buffer "^5.0.1"
 
-ee-first@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.0.3.tgz#6c98c4089abecb5a7b85c1ac449aa603d3b3dabe"
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-error-inject@^1.0.0, error-inject@~1.0.0:
+error-inject@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
-escape-html@^1.0.3, escape-html@~1.0.1:
+escape-html@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
 
@@ -596,16 +561,6 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-finished@~1.1.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/finished/-/finished-1.1.4.tgz#4db9fe20f920bccc2e7126ffa84175c8fcacb5d9"
-
-finished@~1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/finished/-/finished-1.2.2.tgz#41608eafadfd65683b46a1220bc4b1ec3daedcd8"
-  dependencies:
-    ee-first "1.0.3"
-
 flatmap-stream@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.0.tgz#ed54e01422cd29281800914fcb968d58b685d5f1"
@@ -619,10 +574,6 @@ fragment-cache@^0.2.1:
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
     map-cache "^0.2.2"
-
-fresh@~0.2.1:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.2.4.tgz#3582499206c9723714190edd74b4604feb4a614c"
 
 fresh@~0.5.2:
   version "0.5.2"
@@ -1036,7 +987,7 @@ jws@^3.1.5:
     jwa "^1.1.5"
     safe-buffer "^5.0.1"
 
-keygrip@~1.0.0, keygrip@~1.0.2:
+keygrip@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
 
@@ -1075,12 +1026,6 @@ koa-compose@^3.0.0, koa-compose@^3.2.1:
 koa-compose@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/koa-compose/-/koa-compose-4.1.0.tgz#507306b9371901db41121c812e923d0d67d3e877"
-
-koa-compose@~2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/koa-compose/-/koa-compose-2.2.0.tgz#b4afc8c8432313e943708ae2cf5da70c5c5c5a94"
-  dependencies:
-    debug "*"
 
 koa-convert@^1.2.0:
   version "1.2.0"
@@ -1143,20 +1088,6 @@ koa-send@^5.0.0:
     mz "^2.7.0"
     resolve-path "^1.4.0"
 
-koa-send@~1.2.4:
-  version "1.2.4"
-  resolved "http://registry.npmjs.org/koa-send/-/koa-send-1.2.4.tgz#9e0d5658aae56a3ec6ec1a036008f7df8d7ac212"
-  dependencies:
-    debug "*"
-    finished "~1.2.2"
-
-koa-static-folder@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/koa-static-folder/-/koa-static-folder-0.1.6.tgz#786df2ace49f7e00f8023675d2e0f7f85a8a5c5a"
-  dependencies:
-    koa "~0.5.1"
-    koa-send "~1.2.4"
-
 koa-static@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/koa-static/-/koa-static-5.0.0.tgz#5e92fc96b537ad5219f425319c95b64772776943"
@@ -1192,26 +1123,6 @@ koa@^2.2.0:
     statuses "^1.5.0"
     type-is "^1.6.16"
     vary "^1.1.2"
-
-koa@~0.5.1:
-  version "0.5.5"
-  resolved "http://registry.npmjs.org/koa/-/koa-0.5.5.tgz#090aa33bc9ae7776f088debda9b40bba4c7da844"
-  dependencies:
-    accepts "~1.0.0"
-    co "~3.0.2"
-    cookies "~0.4.0"
-    debug "*"
-    delegates "0.0.3"
-    dethroy "~1.0.0"
-    error-inject "~1.0.0"
-    escape-html "~1.0.1"
-    finished "~1.1.1"
-    fresh "~0.2.1"
-    koa-compose "~2.2.0"
-    mime "~1.2.11"
-    only "0.0.2"
-    statuses "~1.0.1"
-    type-is "~1.1.0"
 
 latest-version@^3.0.0:
   version "3.1.0"
@@ -1326,14 +1237,6 @@ mime-types@^2.1.18, mime-types@~2.1.18:
   dependencies:
     mime-db "~1.36.0"
 
-mime-types@~1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-1.0.2.tgz#995ae1392ab8affcbfcb2641dd054e943c0d5dce"
-
-mime@~1.2.11:
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.11.tgz#58203eed86e3a5ef17aed2b7d9ebd47f0a60dd10"
-
 minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
@@ -1425,10 +1328,6 @@ needle@^2.2.0, needle@^2.2.1:
     debug "^2.1.2"
     iconv-lite "^0.4.4"
     sax "^1.2.4"
-
-negotiator@0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.4.7.tgz#a4160f7177ec806738631d0d3052325da42abdc8"
 
 negotiator@0.6.1:
   version "0.6.1"
@@ -1564,7 +1463,7 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-only@0.0.2, only@~0.0.2:
+only@~0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/only/-/only-0.0.2.tgz#2afde84d03e50b9a8edc444e30610a70295edfb4"
 
@@ -1911,10 +1810,6 @@ static-extend@^0.1.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
 
-statuses@~1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.0.4.tgz#a8b203f645cf475a66426f6be690205c85f3ebdd"
-
 stream-combiner@^0.2.2:
   version "0.2.2"
   resolved "http://registry.npmjs.org/stream-combiner/-/stream-combiner-0.2.2.tgz#aec8cbac177b56b6f4fa479ced8c1912cee52858"
@@ -2069,12 +1964,6 @@ type-is@^1.6.16, type-is@~1.6.6:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"
-
-type-is@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/type-is/-/type-is-1.1.0.tgz#d0245ec8b2676668d59dd0cf3255060676a57db6"
-  dependencies:
-    mime "~1.2.11"
 
 uglify-js@~2.4:
   version "2.4.24"
