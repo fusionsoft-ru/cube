@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import { dimensionToggle } from '../actions'
 import * as tree from '../utils/tree'
 
-export default class Arrow extends Component {
+class DimensionArrow extends Component {
   onToggle() {
-    console.log('drill: ' + this.props.id)
     this.context.store.dispatch(dimensionToggle(this.props.id))
   }
 
@@ -23,6 +22,8 @@ export default class Arrow extends Component {
     )
   }
 }
-Arrow.contextTypes = {
+DimensionArrow.contextTypes = {
   store: PropTypes.object
 }
+
+export default DimensionArrow

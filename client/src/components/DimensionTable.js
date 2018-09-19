@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Arrow from './Arrow'
+import DimensionArrow from './DimensionArrow'
 import * as tree from '../utils/tree'
 
 
@@ -12,7 +12,7 @@ export default class DimensionTable extends Component {
       cols.push(
         <th	key={node.id} hidden={node.hidden}>
           {node.title}
-					<Arrow
+					<DimensionArrow
 						id={node.id}
 						toggled={node.toggled}
 					/>
@@ -27,12 +27,10 @@ export default class DimensionTable extends Component {
     const state = this.context.store.getState()
 		var data = tree.values(state.dimensions)
     var rows = []
-		console.log(data)
 		var i = 0
 		var j = 0
-		
+
 		data.forEach(item => {
-      console.log(item)
 		  var cols = []
       item.forEach(elem => {
         cols.push(<td key={'col_' + j}>{elem}</td>)
@@ -62,4 +60,3 @@ export default class DimensionTable extends Component {
 DimensionTable.contextTypes = {
   store: PropTypes.object
 }
-

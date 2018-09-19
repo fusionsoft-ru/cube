@@ -1,44 +1,47 @@
-function isRoot(current) {
-  return current.id === ''
+function isRoot(node) {
+  return node.id === ''
 }
 
-function isLeaf(current) {
-  return typeof current.children === 'undefined'
+function isLeaf(node) {
+  return typeof node.children === 'undefined'
 }
 
-function clone(current) {
-    return JSON.parse(JSON.stringify(current));
+function clone(node) {
+    return JSON.parse(JSON.stringify(node));
 }
 
-function find(current, predicate = node => true) {
+function find(node, predicate = node => true) {
   var nodes = []
-  if(predicate(current)) {
-    nodes.push(current)
+  if(predicate(node)) {
+    nodes.push(node)
   }
-  if(current.children) {
-    current.children.forEach(child => {
+  if(node.children) {
+    node.children.forEach(child => {
       nodes.push(...find(child, predicate))
     })
   }
   return nodes
 }
 
-function findOne(current, predicate = node => true) {
-  return find(current, predicate)[0] || {}
+function findOne(node, predicate = node => true) {
+  return find(node, predicate)[0] || {}
 }
 
-function update(current, predicate = node => true, fields={}) {
-  var nodes = find(current, predicate)
+function update(node, predicate = node => true, fields={}) {
+  var copy = clone(node)
+  var nodes = find(copy, predicate)
   nodes.forEach(node => {
     Object.assign(node, fields)
   })
-  return current
+  return node
 }
 
-function updateOne(root, predicate = node => true, visitor) {
-  var copy = clone(root)
-  var node = findOne(copy, predicate)
-  visitor(node)
+function updateOne(node, predicate = node => true, visitor) {
+  var copy = clone(node)
+  var the_node = findOne(copy, predicate)
+  if(the_node) {
+    visitor(the_node)
+  }
   return copy
 }
 
@@ -47,28 +50,22 @@ const cart = (a, b, ...c) => (b ? cart(f(a, b), ...c) : a);
 
 function traverse() {
 	var data = []
-	function wrapper(root, predicate = node => true, visitor) {
-    if(predicate(root)) {
-			data.push(visitor(root))
-			if(root.children) {
-				root.children.forEach(node => {
-					wrapper(node, predicate, visitor)
+	function wrapped(node, predicate = node => true, visitor) {
+    if(predicate(node)) {
+			data.push(visitor(node))
+			if(node.children) {
+				node.children.forEach(node => {
+					wrapped(node, predicate, visitor)
 				})
 			}
 		}
 	  return data
 	}
-	return wrapper
+	return wrapped
 }
 
-function titles(root) {
-  var data = traverse()(root, node => node.hidden === false, node => node.title)
-  return data
-}
-
-function values(root) {
-  var data = traverse()(root, node => node.hidden === false, node => node.values)
-//  var prod = []
+function values(node) {
+  var data = traverse()(node, node => node.hidden === false, node => node.values)
 	if (data.length > 1)
 	  return cart(...data)
   else
@@ -83,8 +80,7 @@ module.exports = {
   findOne,
   update,
   updateOne,
-  clone,
   traverse,
-	titles,
+  clone,
 	values
 }

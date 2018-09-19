@@ -1,4 +1,4 @@
-import { initialState } from '../utils/initialState'
+import { initialState } from '../tests/initialState'
 import * as tree from '../utils/tree'
 
 function down(node) {
