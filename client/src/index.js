@@ -5,9 +5,9 @@ import App from './components/App'
 import NotFound from './components/NotFound'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { dimensionReducer } from './reducers/dimensionReducer'
+import rootReducer from './reducers'
 
-const store = createStore(dimensionReducer)
+const store = createStore(rootReducer)
 
 const render = () => {
   ReactDOM.render(

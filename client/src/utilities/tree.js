@@ -7,7 +7,13 @@ function isLeaf(node) {
 }
 
 function clone(node) {
-    return JSON.parse(JSON.stringify(node));
+    console.log(node)
+    if(node) {
+      return JSON.parse(JSON.stringify(node));
+    }
+    else {
+      return ''
+    }
 }
 
 function find(node, predicate = node => true) {

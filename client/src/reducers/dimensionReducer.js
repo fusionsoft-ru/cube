@@ -1,21 +1,19 @@
 import * as tree from '../utilities/tree'
-import { initialState } from '../tests/initialState'
+import initialDimensions from '../tests/initialDimensions'
 import { dimensionToggle } from '../actions/dimensionActions'
 
-function dimensionReducer(state=initialState, action) {
+function dimensionReducer(state=initialDimensions, action) {
   switch(action.type) {
 		case 'DIMENSION_TOGGLE':
       var result = tree.updateOne(
-        state.dimensions,
+        state,
         node => node.id === action.id,
         node => dimensionToggle(node)
       )
-			return { dimensions: result }
+			return result
 	  default:
       return state
   }
 }
 
-export {
-  dimensionReducer
-}
+export default dimensionReducer
