@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { dimensionToggle } from '../actions'
-import * as tree from '../utils/tree'
+import * as tree from '../utilities/tree'
 
 class DimensionArrow extends Component {
   onToggle() {
-    this.context.store.dispatch(dimensionToggle(this.props.id))
+    this.context.store.dispatch({
+        type: 'DIMENSION_TOGGLE',
+        id: this.props.id
+    })
   }
 
   render() {

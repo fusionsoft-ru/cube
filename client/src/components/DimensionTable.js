@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import DimensionArrow from './DimensionArrow'
-import * as tree from '../utils/tree'
+import * as tree from '../utilities/tree'
 
 
 export default class DimensionTable extends Component {

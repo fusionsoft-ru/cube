@@ -5,12 +5,9 @@ import App from './components/App'
 import NotFound from './components/NotFound'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { reducer } from './reducers'
-// import './assets/css/bootstrap.min.css'
-// import './assets/css/bootstrap-reboot.css'
-// import './assets/css/main.css'
+import { dimensionReducer } from './reducers/dimensionReducer'
 
-const store = createStore(reducer)
+const store = createStore(dimensionReducer)
 
 const render = () => {
   ReactDOM.render(
