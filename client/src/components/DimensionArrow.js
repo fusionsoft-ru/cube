@@ -6,15 +6,17 @@ class DimensionArrow extends Component {
   onToggle() {
     this.context.store.dispatch({
         type: 'DIMENSION_TOGGLE',
-        id: this.props.id
+        label: this.props.label
     })
   }
 
   render() {
     const state = this.context.store.getState()
-    const toggled = tree.findOne(state.dimensions, dimension => {
-      return dimension.id === this.props.id
-    }).toggled
+    const toggled = tree.findOne(
+      state.dimensions,
+      node => node.label === this.props.label,
+      node => node.toggled
+    )
     const direction = toggled ? 'right' : 'down'
     return (
       <i

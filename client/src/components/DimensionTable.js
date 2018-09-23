@@ -4,18 +4,19 @@ import DimensionArrow from './DimensionArrow'
 import * as tree from '../utilities/tree'
 
 
-export default class DimensionTable extends Component {
+class DimensionTable extends Component {
   header() {
     const state = this.context.store.getState()
     var cols = []
-    tree.find(state.dimensions).forEach(node => {
+    var labels = tree.labels(state.dimensions)
+    console.log(labels)
+    labels.forEach( (label, j) => {
       cols.push(
-        <th	key={node.id} hidden={node.hidden}>
-          {node.title}
-					<DimensionArrow
-						id={node.id}
-						toggled={node.toggled}
-					/>
+        <th	key={'th_' + j}>
+          {label}
+    			<DimensionArrow
+    				label={label}
+    			/>
         </th>
       )
     })
@@ -33,10 +34,10 @@ export default class DimensionTable extends Component {
 		data.forEach(item => {
 		  var cols = []
       item.forEach(elem => {
-        cols.push(<td key={'col_' + j}>{elem}</td>)
+        cols.push(<td key={'td_' + j}>{elem}</td>)
 				j++
 			})
-			rows.push(<tr key={'row_' + i}>{cols}</tr>)
+			rows.push(<tr key={'tr_' + i}>{cols}</tr>)
 			i++
 		})
     return rows
@@ -45,14 +46,12 @@ export default class DimensionTable extends Component {
   render() {
 		this.body()
     return (
-      <div className="container">
-        <div className="cube-left-block">
-    			<table className="options-table">
-            <thead>{this.header()}</thead>
-            <tbody>{this.body()}</tbody>
-    			</table>
-    		</div>
-      </div>
+      <div className="cube-left-block">
+  			<table className="options-table">
+          <thead>{this.header()}</thead>
+          <tbody>{this.body()}</tbody>
+  			</table>
+  		</div>
     )
   }
 }
@@ -60,3 +59,5 @@ export default class DimensionTable extends Component {
 DimensionTable.contextTypes = {
   store: PropTypes.object
 }
+
+export default DimensionTable

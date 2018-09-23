@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import DimensionTable from './DimensionTable'
+import DashboardHeader from './DashboardHeader'
+import PivotTable from './PivotTable'
 
 class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        <DimensionTable/>
+        <DashboardHeader/>
+        <PivotTable/>
       </div>
     )
   }

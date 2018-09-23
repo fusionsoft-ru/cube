@@ -1,92 +1,113 @@
+function find(nodes, predicate = node => true, visitor) {
+	var result = []
+	nodes.forEach(node => {
+	  if(predicate(node)) {
+			result.push(visitor(node))
+	  }
+		if(node.children) {
+			result.push(...find(node.children, predicate, visitor))
+		}
+	})
+  return result
+}
+
+function findOne(nodes, predicate = node => true, visitor = node => node) {
+  return find(nodes, predicate, visitor)[0]
+}
+
+function clone(nodes) {
+	var result = []
+	nodes.forEach(node => {
+		result.push(JSON.parse(JSON.stringify(node)))
+	})
+	return result
+}
+
+function updateOne(nodes, predicate = node => true, visitor = node => node) {
+  var copy = clone(nodes)
+  var node = findOne(copy, predicate)
+  if(node) {
+    visitor(node)
+  }
+  return copy
+}
+
 function isRoot(node) {
-  return node.id === ''
+  return node.name === 'root'
 }
 
 function isLeaf(node) {
   return typeof node.children === 'undefined'
 }
 
-function clone(node) {
-    console.log(node)
-    if(node) {
-      return JSON.parse(JSON.stringify(node));
-    }
-    else {
-      return ''
-    }
+function isHidden(node) {
+  return node.hidden === true
 }
 
-function find(node, predicate = node => true) {
-  var nodes = []
-  if(predicate(node)) {
-    nodes.push(node)
+const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))))
+const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a)
+
+function labels(nodes) {
+  var result = find(
+		nodes,
+		node => !isHidden(node),
+		node => node.label
+	)
+	return result
+}
+
+function values(nodes) {
+  var result = find(
+    nodes,
+    node => !isHidden(node),
+    node => ['All ' + node.plural, ...node.values]
+  )
+  var product = [['*']]
+	if (result.length > 1) {
+	  product = cartesian(...result)
   }
-  if(node.children) {
-    node.children.forEach(child => {
-      nodes.push(...find(child, predicate))
-    })
+	return product
+}
+
+function drillDown(node) {
+  node.toggled = !node.toggled
+  if(!isLeaf(node)) {
+		node.children.forEach( child => {
+			child.hidden = !child.hidden
+		})
   }
-  return nodes
 }
 
-function findOne(node, predicate = node => true) {
-  return find(node, predicate)[0] || {}
-}
-
-function update(node, predicate = node => true, fields={}) {
-  var copy = clone(node)
-  var nodes = find(copy, predicate)
-  nodes.forEach(node => {
-    Object.assign(node, fields)
-  })
-  return node
-}
-
-function updateOne(node, predicate = node => true, visitor) {
-  var copy = clone(node)
-  var the_node = findOne(copy, predicate)
-  if(the_node) {
-    visitor(the_node)
+function drillUp(node) {
+  node.toggled = false
+  if(!isLeaf(node)) {
+		node.children.forEach( child => {
+			child.hidden = true
+			child.toggled = false
+			drillUp(child)
+		})
   }
-  return copy
 }
 
-const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
-const cart = (a, b, ...c) => (b ? cart(f(a, b), ...c) : a);
-
-function traverse() {
-	var data = []
-	function wrapped(node, predicate = node => true, visitor) {
-    if(predicate(node)) {
-			data.push(visitor(node))
-			if(node.children) {
-				node.children.forEach(node => {
-					wrapped(node, predicate, visitor)
-				})
-			}
-		}
-	  return data
+function drillToggle(node) {
+  if(!node.toggled) {
+		drillDown(node)
+	} else {
+		drillUp(node)
 	}
-	return wrapped
 }
-
-function values(node) {
-  var data = traverse()(node, node => node.hidden === false, node => node.values)
-	if (data.length > 1)
-	  return cart(...data)
-  else
-		return [['*']]
-}
-
 
 module.exports = {
-  isRoot,
-  isLeaf,
   find,
   findOne,
-  update,
-  updateOne,
-  traverse,
   clone,
-	values
+  updateOne,
+  isRoot,
+  isLeaf,
+  isHidden,
+  values,
+  labels,
+	drillDown,
+	drillUp,
+	drillToggle
 }

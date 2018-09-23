@@ -3,7 +3,7 @@ const initialFacts = {
   "toggled": false,
   "id": "*",
   "name": "root",
-  "title": "*",
+  "label": "*",
   "plural": "*",
   "type": "list",
   "values": ['*'],
@@ -13,7 +13,7 @@ const initialFacts = {
       "toggled": false,
       "id": "0",
       "name": "defect",
-      "title": "Defect",
+      "label": "Defect",
       "plural": "Defects",
       "type": "list",
       "values": [
@@ -27,7 +27,7 @@ const initialFacts = {
           "toggled": false,
           "id": "00",
           "name": "company",
-          "title": "Company",
+          "label": "Company",
           "plural": "Companies",
           "type": "list",
           "values": [
@@ -41,7 +41,7 @@ const initialFacts = {
               "toggled": false,
               "id": "000",
               "name": "department",
-              "title": "Department",
+              "label": "Department",
               "plural": "Departments",
               "type": "list",
               "values": [
@@ -56,7 +56,7 @@ const initialFacts = {
           "toggled": false,
           "id": "01",
           "name": "reason",
-          "title": "Reason",
+          "label": "Reason",
           "plural": "Reasons",
           "type": "list",
           "values": [
@@ -71,7 +71,7 @@ const initialFacts = {
       "toggled": false,
       "id": "1",
       "name": "Quality",
-      "title": "Quality",
+      "label": "Quality",
       "plural": "qualities",
       "type": "list",
       "values": [
@@ -85,7 +85,7 @@ const initialFacts = {
           "toggled": false,
           "id": "10",
           "name": "standart",
-          "title": "Standart",
+          "label": "Standart",
           "plural": "standarts",
           "type": "list",
           "values": [
