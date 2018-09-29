@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import DashboardHeader from './DashboardHeader'
+import CubeHeader from './CubeHeader'
 import PivotTable from './PivotTable'
 
-class Dashboard extends Component {
+class Cube extends Component {
   render() {
     return (
       <div className="container">
-        <DashboardHeader/>
+        <CubeHeader/>
         <PivotTable/>
       </div>
     )
   }
 }
 
-export default Dashboard
+export default Cube

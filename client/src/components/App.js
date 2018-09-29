@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Dashboard from './Dashboard'
+import Cube from './Cube'
 
 
 class App extends Component {
   render() {
     return (
-      <Dashboard/>
+      <Cube/>
     )
   }
 }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import DimensionTable from './DimensionTable'
-import FactTable from './FactTable'
+import RowFacet from './RowFacet'
+import ColFacet from './ColFacet'
 
 
 class PivotTable extends Component {
   render() {
     return (
-      <div>
-        <DimensionTable/>
-        <FactTable/>
+      <div className="container">
+        <RowFacet/>
+        <ColFacet/>
       </div>
     )
   }

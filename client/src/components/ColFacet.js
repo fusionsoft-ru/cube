@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class FactTable extends Component {
+class ColFacet extends Component {
   render() {
     return (
       <div className="cube-right-block">
@@ -66,4 +66,4 @@ class FactTable extends Component {
   }
 }
 
-export default FactTable
+export default ColFacet

@@ -1,7 +1,7 @@
 import * as tree from '../utilities/tree'
-import initialDimensions from '../tests/initialDimensions'
+import icols from '../tests/icols'
 
-function dimensionReducer(state=initialDimensions, action) {
+function rowReducer(state=icols, action) {
   switch(action.type) {
 		case 'DIMENSION_TOGGLE':
       var result = tree.updateOne(
@@ -15,4 +15,4 @@ function dimensionReducer(state=initialDimensions, action) {
   }
 }
 
-export default dimensionReducer
+export default rowReducer

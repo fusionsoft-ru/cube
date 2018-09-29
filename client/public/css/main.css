@@ -476,6 +476,7 @@ body {
     border-collapse: collapse;
     font-size: 13px;
     vertical-align: top;
+    overflow: auto;
 }
 
 .options-table th {

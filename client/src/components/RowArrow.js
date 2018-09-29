@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import * as tree from '../utilities/tree'
 
-class DimensionArrow extends Component {
+class RowArrow extends Component {
   onToggle() {
     this.context.store.dispatch({
         type: 'DIMENSION_TOGGLE',
@@ -13,7 +13,7 @@ class DimensionArrow extends Component {
   render() {
     const state = this.context.store.getState()
     const toggled = tree.findOne(
-      state.dimensions,
+      state.rows,
       node => node.label === this.props.label,
       node => node.toggled
     )
@@ -26,8 +26,8 @@ class DimensionArrow extends Component {
     )
   }
 }
-DimensionArrow.contextTypes = {
+RowArrow.contextTypes = {
   store: PropTypes.object
 }
 
-export default DimensionArrow
+export default RowArrow

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class DashboardHeader extends Component {
+class CubeHeader extends Component {
   render() {
     return (
       <div className="cube-header">
@@ -29,4 +29,4 @@ class DashboardHeader extends Component {
   }
 }
 
-export default DashboardHeader
+export default CubeHeader

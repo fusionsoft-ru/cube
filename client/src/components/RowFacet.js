@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DimensionArrow from './DimensionArrow'
+import RowArrow from './RowArrow'
 import * as tree from '../utilities/tree'
 
 
-class DimensionTable extends Component {
+class RowFacet extends Component {
   header() {
     const state = this.context.store.getState()
     var cols = []
-    var labels = tree.labels(state.dimensions)
-    console.log(labels)
+    var labels = tree.labels(state.rows)
     labels.forEach( (label, j) => {
       cols.push(
         <th	key={'th_' + j}>
           {label}
-    			<DimensionArrow
+    			<RowArrow
     				label={label}
     			/>
         </th>
@@ -26,7 +25,7 @@ class DimensionTable extends Component {
 
 	body() {
     const state = this.context.store.getState()
-		var data = tree.values(state.dimensions)
+		var data = tree.values(state.rows)
     var rows = []
 		var i = 0
 		var j = 0
@@ -56,8 +55,8 @@ class DimensionTable extends Component {
   }
 }
 
-DimensionTable.contextTypes = {
+RowFacet.contextTypes = {
   store: PropTypes.object
 }
 
-export default DimensionTable
+export default RowFacet

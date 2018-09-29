@@ -1,4 +1,4 @@
-const initialDimensions = [
+const icols = [
   {
     "hidden": false,
     "toggled": false,
@@ -83,4 +83,4 @@ const initialDimensions = [
   }
 ]
 // export default initialDimensions
-module.exports = initialDimensions
+module.exports = icols
