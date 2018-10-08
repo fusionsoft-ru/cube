@@ -25,6 +25,7 @@ class RowFacet extends Component {
 
 	body() {
     const state = this.context.store.getState()
+    console.log(state)
 		var data = tree.values(state.rows)
     var rows = []
 		var i = 0

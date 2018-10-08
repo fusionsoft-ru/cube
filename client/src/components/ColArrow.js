@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import * as tree from '../utilities/tree'
 
-class RowArrow extends Component {
+class ColArrow extends Component {
   onToggle() {
     this.context.store.dispatch({
-        type: 'ROW_TOGGLE',
+        type: 'COL_TOGGLE',
         label: this.props.label
     })
   }
@@ -13,7 +13,7 @@ class RowArrow extends Component {
   render() {
     const state = this.context.store.getState()
     const toggled = tree.findOne(
-      state.rows,
+      state.cols,
       node => node.label === this.props.label,
       node => node.toggled
     )
@@ -26,8 +26,8 @@ class RowArrow extends Component {
     )
   }
 }
-RowArrow.contextTypes = {
+ColArrow.contextTypes = {
   store: PropTypes.object
 }
 
-export default RowArrow
+export default ColArrow

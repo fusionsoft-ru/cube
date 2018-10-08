@@ -1,10 +1,15 @@
-import irows from '../tests/irows'
+import * as tree from '../utilities/tree'
+import initCols from '../tests/initCols'
 
-
-function colReducer(state=irows, action) {
+function colReducer(state=initCols, action) {
   switch(action.type) {
-    case 'FACTS_TOGGLE':
-      return state
+		case 'COL_TOGGLE':
+      var result = tree.updateOne(
+        state,
+        node => node.label === action.label,
+        node => tree.drillToggle(node)
+      )
+			return result
 	  default:
       return state
   }
