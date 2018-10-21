@@ -33,7 +33,7 @@ function updateOne(nodes, predicate = node => true, visitor = node => node) {
 }
 
 function isRoot(node) {
-  return node.name === 'root'
+  return node.type === 'root'
 }
 
 function isLeaf(node) {
@@ -47,22 +47,40 @@ function isHidden(node) {
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))))
 const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a)
 
-function labels(nodes) {
+function labels(nodes, predicate) {
   var result = find(
 		nodes,
-		node => !isHidden(node),
+		predicate,
 		node => node.label
 	)
 	return result
 }
 
-function values(nodes) {
+function testik(node) {
+  console.log(node.values)
+  return [...node.values]
+}
+
+function rowValues(nodes, predicate) {
   var result = find(
     nodes,
-    node => !isHidden(node),
-    node => ['All ' + node.plural, ...node.values]
+    predicate,
+    testik
   )
   var product = [['*']]
+	if (result.length > 1) {
+	  product = cartesian(...result)
+  }
+	return product
+}
+
+function colValues(nodes, predicate) {
+  var result = find(
+    nodes,
+    predicate,
+    node => [...node.values]
+  )
+  var product = []
 	if (result.length > 1) {
 	  product = cartesian(...result)
   }
@@ -105,7 +123,8 @@ module.exports = {
   isRoot,
   isLeaf,
   isHidden,
-  values,
+  rowValues,
+  colValues,
   labels,
 	drillDown,
 	drillUp,

@@ -8,7 +8,7 @@ class RowFacet extends Component {
   header() {
     const state = this.context.store.getState()
     var cols = []
-    var labels = tree.labels(state.rows)
+    var labels = tree.labels(state.rows, node => !tree.isHidden(node))
     labels.forEach( (label, j) => {
       cols.push(
         <th	key={'th_' + j}>
@@ -26,7 +26,7 @@ class RowFacet extends Component {
 	body() {
     const state = this.context.store.getState()
     console.log(state)
-		var data = tree.values(state.rows)
+		var data = tree.rowValues(state.rows, node => !tree.isHidden(node))
     var rows = []
 		var i = 0
 		var j = 0

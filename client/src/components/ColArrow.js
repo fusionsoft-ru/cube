@@ -26,6 +26,7 @@ class ColArrow extends Component {
     )
   }
 }
+
 ColArrow.contextTypes = {
   store: PropTypes.object
 }

@@ -1,5 +1,4 @@
 var tree = require('./utilities/tree')
-var dimensions = require('./tests/initialDimensions')
+var dimensions = require('./tests/initCols0')
 
-// console.log(tree.find(dimensions))
-console.log(tree.values(dimensions))
+console.log(tree.rowValues(dimensions, node=>!tree.isRoot(node)))

@@ -6,8 +6,6 @@ const initCols = [
     "label": "Time",
     "plural": "times",
     "type": "head",
-    "values": [
-    ],
     "children" : [
       {
         "hidden": false,

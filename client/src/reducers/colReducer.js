@@ -1,5 +1,5 @@
 import * as tree from '../utilities/tree'
-import initCols from '../tests/initCols'
+import initCols from '../tests/initCols0'
 
 function colReducer(state=initCols, action) {
   switch(action.type) {
